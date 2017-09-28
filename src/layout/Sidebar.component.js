@@ -9,7 +9,7 @@ function SidebarWrapper(props, context) {
         { key: 'userSettings', label: context.d2.i18n.getTranslation('user_settings'), icon: 'build' },
         { key: 'profileSettings', label: context.d2.i18n.getTranslation('user_profile'), icon: 'face' },
         { key: 'accountSettings', label: context.d2.i18n.getTranslation('account_settings'), icon: 'account_circle' },
-        { key: 'viewProfile', label: context.d2.i18n.getTranslation('view_profile'), icon: 'face' }        
+        { key: 'viewProfile', label: context.d2.i18n.getTranslation('view_profile'), icon: 'face' },
     ];
 
     return (
