@@ -15,10 +15,10 @@ import Checkbox from 'd2-ui/lib/form-fields/CheckBox.component';
 import AppTheme from './theme';
 
 import userSettingsActions from '../app.actions';
-import userSettingsStore from '../settings/userSettings.store';
+import userSettingsStore from '../userSettings/userSettings.store';
 import optionValueStore from '../optionValue.store';
-import userSettingsKeyMapping from '../userSettingsMapping';
-import AccountEditor from '../account/accountEditor.component';
+import userSettingsKeyMapping from '../settingsKeyMapping';
+import AccountEditor from '../accountSettings/accountSettingsEditor.component';
 
 const styles = {
     header: {

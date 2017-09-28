@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import FormFields from '../layout/formFields.component';
-import userProfileActions from './profile.actions';
-import userProfileStore from './profile.store';
+import userProfileActions from './profileSettings.actions';
+import userProfileStore from './profileSettings.store';
 
 
-function EditProfile(props, context) {
+function ProfileSettings(props, context) {
     const fieldKeys = [
         'firstName',
         'surname',
@@ -35,6 +35,6 @@ function EditProfile(props, context) {
     );
 }
 
-EditProfile.contextTypes = { d2: PropTypes.object.isRequired };
+ProfileSettings.contextTypes = { d2: PropTypes.object.isRequired };
 
-export default EditProfile;
+export default ProfileSettings;

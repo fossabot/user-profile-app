@@ -7,8 +7,8 @@ import Action from 'd2-ui/lib/action/Action';
 import { getInstance as getD2 } from 'd2/lib/d2';
 
 import AppRouter from './app.router';
-import userProfileStore from './profile/profile.store';
-import userSettingsStore from './settings/userSettings.store';
+import userProfileStore from './profileSettings/profileSettings.store';
+import userSettingsStore from './userSettings/userSettings.store';
 import optionValueStore from './optionValue.store';
 
 const appActions = Action.createActionsFromNames([

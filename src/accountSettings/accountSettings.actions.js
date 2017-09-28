@@ -5,11 +5,11 @@ import Action from 'd2-ui/lib/action/Action';
 
 import appActions from '../app.actions';
 
-const accountActions = Action.createActionsFromNames([
+const accountSettingsActions = Action.createActionsFromNames([
     'setPassword',
 ]);
 
-accountActions.setPassword.subscribe(({ data: password, complete, error }) => {
+accountSettingsActions.setPassword.subscribe(({ data: password, complete, error }) => {
     const payload = { userCredentials: { password } };
 
     getD2().then((d2) => {
@@ -28,4 +28,4 @@ accountActions.setPassword.subscribe(({ data: password, complete, error }) => {
     });
 });
 
-export default accountActions;
+export default accountSettingsActions;

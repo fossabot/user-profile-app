@@ -13,9 +13,10 @@ import AppTheme from './layout/theme';
 import Snackbar from './layout/Snackbar.component';
 import Sidebar from './layout/Sidebar.component';
 
-import Profile from './profile/profile.component';
-import Account from './account/account.component';
-import UserSettings from './settings/userSettings.component';
+import ProfileSettings from './profileSettings/profileSettings.component';
+import AccountSettings from './accountSettings/accountSettings.component';
+import UserSettings from './userSettings/userSettings.component';
+import ViewProfile from './viewProfile/viewProfile.component';
 
 const HeaderBar = withStateFrom(headerBarStore$, HeaderBarComponent);
 
@@ -47,10 +48,11 @@ class AppRouter extends React.Component {
                     <Snackbar />
                     <Router history={hashHistory}>
                         <Route component={WrAppadApp}>
-                            <Route path="settings" component={UserSettings} />
-                            <Route path="profile" component={Profile} />
-                            <Route path="account" component={Account} />
-                            <Redirect from="/" to="/settings" />
+                            <Route path="userSettings" component={UserSettings} />
+                            <Route path="profileSettings" component={ProfileSettings} />
+                            <Route path="accountSettings" component={AccountSettings} />
+                            <Route path="viewProfile" component={ViewProfile} />
+                            <Redirect from="/" to="/viewProfile" />
                         </Route>
                     </Router>
                 </div>

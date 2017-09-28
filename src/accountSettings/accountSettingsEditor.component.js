@@ -8,14 +8,14 @@ import TextField from 'd2-ui/lib/form-fields/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
 import appActions from '../app.actions';
-import accountActions from './account.actions';
+import accountSettingsActions from './accountSettings.actions';
 
 function isNotEmpty(value) {
     return value && String(value).trim().length > 0;
 }
 
 
-class AccountEditor extends React.Component {
+class AccountSettingsEditor extends React.Component {
     constructor(props, context) {
         super(props, context);
 
@@ -71,7 +71,7 @@ class AccountEditor extends React.Component {
         } else if (!isNotEmpty(this.state.newPassword) || !isNotEmpty(this.state.reNewPassword)) {
             appActions.showSnackbarMessage(this.getTranslation('password_do_not_match'));
         } else {
-            accountActions.setPassword(this.state.newPassword);
+            accountSettingsActions.setPassword(this.state.newPassword);
         }
     }
     /* eslint-enable */
@@ -149,6 +149,7 @@ class AccountEditor extends React.Component {
                     label: this.d2.i18n.getTranslation('update_password'),
                     onClick: this.updatePassword,
                     style: { marginTop: '20px' },
+                    secondary: true,
                 },
             },
         ];
@@ -158,7 +159,7 @@ class AccountEditor extends React.Component {
         return <FormBuilder fields={fields} onUpdateField={this.updateState} ref={setRef} />;
     }
 }
-AccountEditor.propTypes = { username: PropTypes.string.isRequired };
-AccountEditor.contextTypes = { d2: PropTypes.object.isRequired };
+AccountSettingsEditor.propTypes = { username: PropTypes.string.isRequired };
+AccountSettingsEditor.contextTypes = { d2: PropTypes.object.isRequired };
 
-export default AccountEditor;
+export default AccountSettingsEditor;

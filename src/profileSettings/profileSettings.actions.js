@@ -5,8 +5,8 @@ import Action from 'd2-ui/lib/action/Action';
 import { wordToValidatorMap } from 'd2-ui/lib/forms/Validators';
 
 import userSettingsActions from '../app.actions';
-import userProfileStore from './profile.store';
-import userSettingsKeyMapping from '../userSettingsMapping';
+import userProfileStore from './profileSettings.store';
+import settingsKeyMapping from '../settingsKeyMapping';
 
 const userProfileActions = Action.createActionsFromNames([
     'save',
@@ -29,8 +29,8 @@ userProfileActions.save.subscribe(({ data, complete, error }) => {
         userProfileStore.setState(userProfileStore.state);
 
         // Run field validators
-        if (Array.isArray(userSettingsKeyMapping[key].validators)) {
-            const validators = userSettingsKeyMapping[key].validators;
+        if (Array.isArray(settingsKeyMapping[key].validators)) {
+            const validators = settingsKeyMapping[key].validators;
             if (!validators.reduce((prev, curr) => prev && wordToValidatorMap.get(curr)(value), true)) {
                 log.warn(`One or more validators did not pass for field "${key}" and value "${value}"`);
                 return;
